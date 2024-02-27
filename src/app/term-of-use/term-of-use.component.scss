@@ -1,0 +1,60 @@
+.terms-of-use{
+    padding-top: 100px;
+
+    .align{
+        margin: auto;
+    }
+
+    h1{
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 28px;
+    }
+    h3{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    ul{
+        // margin-bottom: 20px;
+        li{
+            font-size: 24px;
+            margin-left: 20px;
+        }
+    }
+    button{
+        background-color: #00705c;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+    @media (max-width:768px) {
+        p{
+            font-size: 20px;
+        }
+        ul{
+            li{
+                font-size: 20px;
+            }
+        }
+    }
+    @media (max-width:768px) {
+        p{
+            font-size: 18px;
+        }
+        ul{
+            li{
+                font-size: 18px;
+            }
+        }
+    }
+}

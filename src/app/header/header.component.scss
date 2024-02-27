@@ -1,0 +1,150 @@
+/* YourComponent.scss */
+.white-logo{
+    display: none;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+.black-logo{
+    display: block;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto
+}
+.menu-close {
+    display: none !important; 
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white; // Adjust the color to match your design
+    font-size: 1.5rem;
+    z-index: 101; // Ensure it's above other content but below modal overlays if any
+
+    .material-icons {
+      font-size: 1.5rem;
+    }
+  }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; // Adjust the color to match your design
+    padding: 1rem 4%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+
+    .nav-links li.active a {
+        background-color: #191919; // Or any other highlight color
+      }
+
+    
+    .nav-brand {
+
+      // Style your brand/logo here
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+  
+      li {
+        padding: 0 1rem;
+        
+        a {
+          text-decoration: none;
+          color: white; // Set your desired color
+          border-radius: 20px;
+          padding: 0.5rem 1rem;
+          transition: background-color 0.3s;
+          cursor: pointer;
+  
+        //   &:hover {
+        //     background-color: darken(#333, 10%); 
+        //   }
+        }
+      }
+  
+      &.active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        right: 0;
+      }
+    }
+  
+    .nav-toggle {
+      display: none; // Hide by default, will be shown on mobile
+      background: none;
+      border: none;
+      color: white; // Set your desired color
+  
+      .material-icons {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media (max-width: 1040px) {
+    .nav-links {
+        list-style: none;
+        display: flex;
+    
+        li {
+          padding: 0 0.5rem !important;
+        }
+    }  
+  }
+  
+  // Responsive style for mobile
+  @media (max-width: 900px) {
+    .menu-close {
+        display: block !important; // Show the close button on mobile when the menu is open
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        position: relative;
+        color: white !important;
+      }
+    .nav-links {
+      display: none !important; // Hide on mobile by default
+  
+      &.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        position: fixed !important;
+        z-index: 200;
+        gap: 20px;
+        top: 0 !important;
+        left: 0 !important;
+        right: unset !important;
+        background-color: #333;
+        height: 100vh !important;
+
+      }
+  
+      li {
+        padding: 1rem 0;
+      }
+    }
+  
+    .nav-toggle {
+      display: inline-block !important; // Show the toggle button on mobile
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .black-logo{
+        display: none;
+    }
+    .white-logo{
+        display: block;
+    }
+  }

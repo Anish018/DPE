@@ -1,0 +1,28 @@
+<section class="section ">
+    <div class="bg">
+        <div class="left-bg">
+        </div>
+        <div class="right-img">
+          <img src="../../assets/images/contact-bg-img.jpg" alt="">
+        </div>
+
+      </div>
+    <div class="align">
+
+        <p class="head">- Quick Connect</p>
+        <h2 class="page-sub-head">Get in touch with us for
+            any questions & help</h2>
+        <div class="seperator"></div>
+        <form (submit)="sendEmail($event)" class="form">
+            <h3 class="form-heading">Request Call Back</h3>
+
+            <div class="name-phone">
+                <input class="name" type="text" name="user_name" placeholder="Full name" required>
+                <input class="email" type="email" name="user_email" placeholder="Email address" required>
+            </div>
+            <input type="tel" name="user_phone" placeholder="Phone number" required>
+            <textarea name="message" placeholder="Your message here..." required></textarea>
+            <input class="submit" type="submit" [value]="isSubmitting ? 'Submitting...' : 'Request Call Back'" [disabled]="isSubmitting">
+        </form>
+    </div>
+</section>

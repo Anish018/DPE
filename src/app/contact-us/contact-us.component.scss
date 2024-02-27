@@ -1,0 +1,101 @@
+.name-phone{
+    display: flex;
+    gap:20px
+}
+section{
+    position: relative;
+
+}
+.align{
+    z-index: 2;
+    padding-top: 80px;
+}
+.seperator{
+    width: 50px;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.head{
+    font-size: 14px;
+    color: white;
+}
+.page-sub-head{
+    font-size: 28px;
+    color: white;
+}
+.form-heading{
+    border-bottom: 1px solid rgb(189, 189, 189);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0A1510;
+    font-size: 24px;
+
+}
+textarea{
+    padding: 10px;
+    background-color: #E6EDED;
+    border: none;
+
+}
+.email, .name{
+    width: 50%;
+}
+.submit{
+    background-color: #3A7658;
+    color: white;
+    margin-top: 30px;
+}
+input{
+    padding: 10px;
+    background-color: #E6EDED;
+    border: none;
+}
+.align{
+    width: 800px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+
+
+}
+.bg{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    left: 0;
+    .left-bg, .right-img{
+        width: 50%;
+        height: 500px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .left-bg{
+        background-color: black;
+    }
+}
+@media (max-width: 900px) {
+    .align{
+        width: 80% !important;
+    }
+    .name-phone{
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    .email, .name{
+        width: 100%;
+    }
+
+}
