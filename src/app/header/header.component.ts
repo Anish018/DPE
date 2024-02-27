@@ -1,4 +1,5 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, HostListener, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -13,53 +14,64 @@ export class HeaderComponent implements AfterViewInit {
   currentSection = '';
   private scrollEvents = new Subject<void>();
   
-  constructor() {
-    // Debounce the scroll event to wait until the scrolling has finished
-    this.scrollEvents.pipe(debounceTime(100)).subscribe(() => this.highlightCurrentSection());
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      // Listen to scroll events directly without debounceTime
+      this.scrollEvents.subscribe(() => this.highlightCurrentSection());
+    }
   }
+  
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.highlightCurrentSection();
-    }, 0);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.highlightCurrentSection();
+      }, 0);
+    }
   }
 
-  @HostListener('window:scroll')
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    this.scrollEvents.next();
+    if (isPlatformBrowser(this.platformId)) {
+      this.scrollEvents.next();
+    }
   }
 
   scrollToSection(sectionId: string) {
-    this.currentSection = sectionId; // Set the current section for active styling
-    this.menuOpen = false; // Close the mobile menu if it's open
+    if (isPlatformBrowser(this.platformId)) {
+      this.currentSection = sectionId; // Set the current section for active styling
+      this.menuOpen = false; // Close the mobile menu if it's open
 
-    setTimeout(() => {
-      const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // If there's a fixed header or other elements, you might need to adjust the scroll
-      }
-    }, 0);
+      setTimeout(() => {
+        const sectionElement = document.getElementById(sectionId);
+        if (sectionElement) {
+          sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // If there's a fixed header or other elements, you might need to adjust the scroll
+        }
+      }, 0);
+    }
   }
 
   private highlightCurrentSection() {
-    const sections = ['home', 'about', 'feature', 'floor', 'location', 'contact'];
-    const scrollPosition = window.pageYOffset;
-    const headerOffset = 50; // Adjust this value based on the height of your fixed header
+    if (isPlatformBrowser(this.platformId)) {
+      const sections = ['home', 'about', 'feature', 'floor', 'location', 'contact'];
+      const scrollPosition = window.pageYOffset;
+      const headerOffset = 50; // Adjust this value based on the height of your fixed header
 
-    let activeSectionId = '';
-    for (const sectionId of sections) {
-      const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        const sectionTop = sectionElement.offsetTop - headerOffset;
-        const sectionHeight = sectionElement.offsetHeight;
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          activeSectionId = sectionId;
-          break;
+      let activeSectionId = '';
+      for (const sectionId of sections) {
+        const sectionElement = document.getElementById(sectionId);
+        if (sectionElement) {
+          const sectionTop = sectionElement.offsetTop - headerOffset;
+          const sectionHeight = sectionElement.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            activeSectionId = sectionId;
+            break;
+          }
         }
       }
-    }
 
-    this.currentSection = activeSectionId;
+      this.currentSection = activeSectionId;
+    }
   }
 }

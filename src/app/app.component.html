@@ -1,1 +1,10 @@
-<router-outlet />
+<!-- app.component.html -->
+<router-outlet></router-outlet>
+
+    <div *ngIf="showCookieConsent" class="cookie-consent-popup">
+      <p>
+        We use cookies to improve your experience. By continuing, you agree to our use of cookies.
+        Please read our <a href="/cookie-policy" target="_blank">cookie policy</a>.
+      </p>
+      <button (click)="acceptCookies()">Accept</button>
+    </div>

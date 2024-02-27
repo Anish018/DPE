@@ -72,14 +72,28 @@ body {
     font-family: "Archivo", sans-serif;
     font-style: normal;
 }
-.material-icons{
-    color: black;
+.navbar{
+    .material-icons{
+        color: white;
+    }
 }
+
 
 
 @media (max-width: 968px) {
     .align{
         width: 90% !important;
+    }
+    
+}
+@media (max-width: 500px) {
+    .s7{
+        .carousel-control-next {
+            right: -28px;
+        }
+        .carousel-control-prev {
+            left: -34px;
+        }
     }
     
 }

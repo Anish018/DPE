@@ -29,7 +29,7 @@
         />
         <p>Whitefield, Bangalore.</p>
       </div>
-      <button class="req-btn">Request Call Back</button>
+      <button class="req-btn" (click)="scrollToSection('contact')">Request Call Back</button>
     </div>
     <img
       class="hero-img"
@@ -38,7 +38,7 @@
     />
     <img class="hero-img-mob" src="../../assets/images/hero-img-mob.jpg" alt="hero-img-mob">
   </section>
-  <section class="section s2" id="about">
+  <section class="section s2" >
     <div class="align">
       <div class="left">
         <h1 class="heading">Opportunity Closed</h1>
@@ -51,15 +51,18 @@
       <div class="right">
         <h1 class="heading">Opportunity Open</h1>
         <p class="heading2">Pursuit of the Elements from the House of Disha</p>
-        <p class="text-body">
+        <p class="text-body">1 BHK Units | CAGR 50% YOY | 6.8% Rental Yield Potential
+        </p>
+        <p class="s-bold">
           If you didn't seize the opportunity before, its time to make your
           investment count, NOW!
         </p>
       </div>
     </div>
   </section>
-  <section class="section s3" id="feature">
+  <section class="section s3" id="about">
     <div class="align">
+      <h1 class="page-title">About the Project</h1>
       <p class="text">
         Invest in exclusive 1 BHK residences in Disha Habitat’s latest township
         project!  Discover the Millenial Tower, tailored for your investment
@@ -69,11 +72,13 @@
         is set for you to reap the rewards of a visionary investment choice. The
         overall project is set on a 20 acre land parcel with 7 Towers, 60 Villas
         and a 80K sq ft clubhouse. More details of the project can be found here
-        at www.dishapursuitoftheelements.com
+        at <span><a class="link" target="_blank" href="http://www.dishapursuitoftheelements.com">www.dishapursuitoftheelements.com</a></span>
       </p>
+
+
     </div>
   </section>
-  <section class="section s4" id="floor">
+  <section class="section s4" >
     <div class="align">
       <div class="left">
         <img
@@ -86,23 +91,20 @@
         <h1 class="heading">Why Invest with Disha ? </h1>
         <ul class="ul">
           <li>
-            Disha has a legacy of completing all their projects way before
-            time. 
+            Disha has a legacy of completing all their projects way before time. 
           </li>
           <li>
-            Most of Disha’s projects are sold out within the first 6 months of
-            launch
+            Most of Disha’s projects are sold out within the first 6 months of launch.
           </li>
           <li>
-            Disha’s projects are highly free from snags, due to international
-            spec Quality Control. 
+            Disha’s projects are highly free from snags, due to International Quality Control.  
           </li>
-          <li>Hassle-Free Ownership:Streamlined property management.</li>
+          <li>Hassle-Free Ownership: Streamlined property management.</li>
         </ul>
       </div>
     </div>
   </section>
-  <section class="section s5" id="location">
+  <section class="section s5" >
     <div class="align">
       <h1 class="heading">The Opportunity</h1>
       <div class="first-row">
@@ -135,36 +137,31 @@
         <div class="sec-tile-col">
           <div class="sec-tile-col-tile">
             <img src="../../assets/icons/amenities.png" alt="amenities" />
-            <p>80+</p>
-            <p>Amenities</p>
+            <p style="text-align: center;">80+ <br />Amenities</p>
           </div>
           <div class="sec-tile-col-tile">
             <img src="../../assets/icons/car-logo.png" alt="amenities" />
-            <p>Dedicated</p>
-            <p>Car Park </p>
+            <p style="text-align: center;">Dedicated <br /> Car Park</p>
           </div>
           <div class="sec-tile-col-bottom-tile"></div>
         </div>
       </div>
       <div class="third-row">
         <div class="third-tile">
-          <p>Sprawling 20</p>
-          <p>acre property</p>
+          <p>Sprawling 20 acre property</p>
         </div>
         <div class="third-tile">
           <p>Low Maintenance </p>
-          <p>Maintenance </p>
         </div>
         <div class="third-tile">
-          <p>Sprawling 20</p>
-          <p>acre property</p>
+          <p>1200 residences</p>
         </div>
       </div>
     </div>
   </section>
-  <section class="section s6">
+  <section class="section s6" id="feature">
     <div class="align">
-      <h1 class="page-heading">Master Plan</h1>
+      <h1 class="page-heading">Proposed Master Plan</h1>
       <div class="details">
         <div class="img-wrapper">
           <img
@@ -191,9 +188,11 @@
       </div>
     </div>
   </section>
-  <section class="section s7" id="contact">
+  <section class="section s7" id="floor">
+    <h1 class="page-title">Proposed Floor Plan</h1>
+
     <div class="align">
-      <ngb-carousel  #myCarousel [interval]="0">
+      <ngb-carousel [interval]="0">
         <!-- Slide 1 -->
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper slide1">
@@ -275,16 +274,13 @@
 
         <!-- Add more slides as needed, each with its unique content and structure -->
       </ngb-carousel>
-      <div class="logo-container"><img class="logo" src="../../assets/logos/logo.svg" alt="logo"></div>
+      <!-- <div class="logo-container"><img class="logo" src="../../assets/logos/logo.svg" alt="logo"></div> -->
       <p class="tower-dis">
-        Disclaimer: Contents of this document are for information purposes
-        only. All plans, elevations and views are for representation only.
-        Dimensions and areas are indicative and may vary as per sanction
-        plan/agreement plan.
+        Disclaimer: Contents of this document are for information purposes only. All plans, elevations and views are for representation only. Dimensions and areas are indicative and may vary as per sanction plan/agreement post RERA approval.
       </p>
     </div>
   </section>
-  <section class="section s8">
+  <section class="section s8" id="location">
     <div class="align">
       <div class="map">
         <iframe
@@ -293,12 +289,12 @@
           style="border:0"
           loading="lazy"
           allowfullscreen
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1752252020283!2d77.63573077598838!3d12.960636815116706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17c735a2d425%3A0xe073ef8aa8f75b55!2sCredvest!5e0!3m2!1sen!2sin!4v1708900645086!5m2!1sen!2sin">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8007009627527!2d77.7537014!3d12.9205273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0d245fec33d7%3A0x9b08a1262142c9a8!2sDisha%20Pursuit%20Of%20The%20Elements!5e0!3m2!1sen!2sin!4v1709037160012!5m2!1sen!2sin">
         </iframe>
       </div>
     </div>
   </section>
-  <app-contact-us/>
+  <app-contact-us id="contact"/>
   <section class="section s9">
     <div class="align">
 

@@ -5,14 +5,14 @@
     }
     h1{
         margin-bottom: 60px;
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
     h2{
         font-size: 1.6rem;
         margin-bottom: 10px;
     }
     p{
-        font-size: 24px;
+        font-size: 17px;
         margin-bottom: 20px;
     }
     p:last-child{
@@ -32,12 +32,8 @@
     }
     @media (max-width: 768px) {
         p{
-            font-size: 20px;
+            font-size: 17px;
         }
     }
-    @media screen {
-        p{
-            font-size: 18px;
-        }
-    }
+
 }

@@ -28,11 +28,11 @@
     padding-top: 100px;
   
     h1 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       margin-bottom: 20px;
     }
     p {
-      font-size: 24px;
+      font-size: 17px;
       margin-bottom: 20px;
       line-height: 28px;
     }
@@ -43,7 +43,7 @@
     ul {
       margin-bottom: 20px;
       li {
-        font-size: 24px;
+        font-size: 17px;
         margin-left: 20px;
         line-height: 28px;
       }
@@ -62,21 +62,21 @@
     }
     @media (max-width: 768px) {
       p {
-        font-size: 20px;
+        font-size: 17px;
       }
       ul {
         li {
-          font-size: 20px;
+          font-size: 17px;
         }
       }
     }
     @media (max-width: 500px) {
       p {
-        font-size: 18px;
+        font-size: 17px;
       }
       ul {
         li {
-          font-size: 18px;
+          font-size: 17px;
         }
       }
     }

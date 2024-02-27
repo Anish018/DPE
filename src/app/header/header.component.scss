@@ -27,10 +27,10 @@
     }
   }
 .navbar {
+    background-color: #00000059;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; // Adjust the color to match your design
     padding: 1rem 4%;
     position: fixed;
     top: 0;
@@ -50,6 +50,7 @@
     .nav-links {
       list-style: none;
       display: flex;
+      margin-bottom: 0;
   
       li {
         padding: 0 1rem;
@@ -82,7 +83,7 @@
       display: none; // Hide by default, will be shown on mobile
       background: none;
       border: none;
-      color: white; // Set your desired color
+      color: white; 
   
       .material-icons {
         font-size: 1.5rem;

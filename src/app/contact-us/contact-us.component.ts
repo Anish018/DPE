@@ -20,14 +20,18 @@ export class ContactUsComponent {
   public sendEmail(event: Event) {
     event.preventDefault();
     this.isSubmitting = true; // Start submitting
+    const form = event.target as HTMLFormElement;
+
     emailjs.sendForm('service_zfmxvya', 'template_qmbx5jy', event.target as HTMLFormElement, '6-QdLjlzl5V_YnnGJ')
       .then((result: EmailJSResponseStatus) => {
         this.snackBar.open('Email sent successfully!', 'Close', {
           duration: 3000,
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
         });
         this.isSubmitting = false; // End submitting
+        form.reset(); // Reset the form after successful submission
+
       }, (error) => {
         this.snackBar.open('Failed to send the email, please try again.', 'Close', {
           duration: 3000,

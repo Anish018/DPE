@@ -36,7 +36,8 @@ section{
 textarea{
     padding: 10px;
     background-color: #E6EDED;
-    border: none;
+    border: 1px solid #cecece;
+
 
 }
 .email, .name{
@@ -46,11 +47,15 @@ textarea{
     background-color: #3A7658;
     color: white;
     margin-top: 30px;
+    width: fit-content;
+    align-self: flex-end;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 input{
     padding: 10px;
     background-color: #E6EDED;
-    border: none;
+    border: 1px solid #cecece;
 }
 .align{
     width: 800px;
