@@ -3,6 +3,8 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { share } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router'; // Import Router
+
 
 
 @Component({
@@ -15,7 +17,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactUsComponent {
   isSubmitting = false; // Used to handle button text and state
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar,
+    private router: Router
+    ) {}
 
   public sendEmail(event: Event) {
     event.preventDefault();
@@ -29,8 +33,10 @@ export class ContactUsComponent {
           horizontalPosition: 'right',
           verticalPosition: 'top',
         });
+
         this.isSubmitting = false; // End submitting
         form.reset(); // Reset the form after successful submission
+        this.router.navigate(['/thankyou']); // Navigate to the thank you page
 
       }, (error) => {
         this.snackBar.open('Failed to send the email, please try again.', 'Close', {

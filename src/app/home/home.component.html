@@ -27,7 +27,7 @@
           src="../../assets/icons/location-icon.png"
           alt="location-icon"
         />
-        <p>Whitefield, Bangalore.</p>
+        <p>Gunjur-Varthur Rd, Bangalore</p>
       </div>
       <button class="req-btn" (click)="scrollToSection('contact')">Request Call Back</button>
     </div>
@@ -65,7 +65,7 @@
       <h1 class="page-title">About the Project</h1>
       <p class="text">
         Invest in exclusive 1 BHK residences in Disha Habitat’s latest township
-        project!  Discover the Millenial Tower, tailored for your investment
+        project! Discover the Millenial Tower, tailored for your investment
         needs. Whether you’re a seasoned investor or a first-time buyer, these 1
         BHK residences are set to redefine the meaning of smart investing. Every
         amenity at your doorstep and every opportunity within reach, the stage
@@ -113,7 +113,7 @@
             NRI investment </h3>
           <ul>
             <li>Investment Size: 59.9 Lakhs </li>
-            <li>77% owned by NRIs</li>
+            <!-- <li>77% owned by NRIs</li> -->
             <li>Payment Plan: 10-80-10 </li>
           </ul>
         </div>
@@ -129,9 +129,9 @@
         <div class="sec-left-tile">
           <h3 class="tile-heading">Specifications</h3>
           <ul>
-            <li>Carpet Area  691 square ft  </li>
-            <li>RERA completion Date  december 2026 </li>
-            <li>RERA Acknowledgement Number <span class="act-no"> ACK/KA/RERA/1251/308 PR/150224/007869</span></li>
+            <li>Carpet Area  691 square ft </li>
+            <!-- <li>RERA completion Date  December 2026 </li> -->
+            <li>RERA Number <span class="act-no"> ACK/KA/RERA/1251/308 PR/150224/007869</span></li>
           </ul>
         </div>
         <div class="sec-tile-col">
@@ -161,7 +161,7 @@
   </section>
   <section class="section s6" id="feature">
     <div class="align">
-      <h1 class="page-heading">Proposed Master Plan</h1>
+      <h1 class="page-heading">Master Plan</h1>
       <div class="details">
         <div class="img-wrapper">
           <img
@@ -189,7 +189,7 @@
     </div>
   </section>
   <section class="section s7" id="floor">
-    <h1 class="page-title">Proposed Floor Plan</h1>
+    <h1 class="page-title">Floor Plan</h1>
 
     <div class="align">
       <ngb-carousel [interval]="0">
@@ -295,37 +295,5 @@
     </div>
   </section>
   <app-contact-us id="contact"/>
-  <section class="section s9">
-    <div class="align">
-
-      <div class="email">
-        <span class="material-icons">email</span>
-        <p>salesdpe&#64;dishahabitat.com</p>
-
-      </div>
-      <div class="phone">
-        <span class="material-icons">call</span>
-        <p>+91-9036180731</p>
-
-      </div>
-      <div class="address">
-        <span class="material-icons">location_on</span>
-        <p>Whitefield, Bangalore.</p>
-      </div>
-
-    </div>
-  </section>
-  <section class=" section footer">
-    <div class="align">
-      <div class="policies">
-        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
-        <a href="/term-of-use" target="_blank">Terms & Conditions</a>
-        <a href="/cookie-policy" target="_blank">Cookie Policy</a>
-        <img class="footer-image" src="../../assets/logos/disha-black-logo.png" alt="">
-
-      </div>
-      <a class="power" href="https://credvest.com/" target="_blank">Powered by Credvest India Private Limited</a>
-    </div>
-  </section>
-  
+  <app-footer/>
 </div>

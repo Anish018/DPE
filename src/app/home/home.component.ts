@@ -5,13 +5,14 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactUsComponent } from '../contact-us/contact-us.component';
 import { HeaderComponent } from '../header/header.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { FooterComponent } from '../footer/footer.component';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgbModule, ContactUsComponent, HeaderComponent],
+  imports: [CommonModule, NgbModule, ContactUsComponent, HeaderComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

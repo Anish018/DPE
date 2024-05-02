@@ -1,8 +1,8 @@
 <!-- header.component.html-->
 <nav class="navbar">
   <div class="nav-brand">
-<img class="white-logo" src="../../assets/logos/disha-logo.png" alt="Disha Logo"> 
-<img class="black-logo" src="../../assets/logos/disha-logo.png" alt="Disha Logo"> 
+<a href="#home"><img   class="white-logo" src="../../assets/logos/disha-logo.png" alt="Disha Logo"> </a>
+<a href="#home"><img   class="black-logo" src="../../assets/logos/disha-logo.png" alt="Disha Logo"> </a>
 </div>
   <ul class="nav-links" [class.active]="menuOpen">
     <li [class.active]="currentSection === 'home'">
@@ -23,11 +23,13 @@
     <li [class.active]="currentSection === 'contact'">
       <a href="#contact" (click)="scrollToSection('contact')">Contact</a>
     </li>
+    <button class="menu-close" (click)="menuOpen = false">
+      <span class="material-icons">chevron_left</span><span class="back-text">Back</span>
+    </button>
+    
   </ul>
   <button class="nav-toggle" (click)="menuOpen = !menuOpen">
     <span class="material-icons">menu</span>
   </button>
-  <!-- <button class="menu-close" (click)="menuOpen = false">
-    <span class="material-icons">close</span>
-  </button> -->
+
 </nav>

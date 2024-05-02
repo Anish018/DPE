@@ -1,7 +1,7 @@
 // app.component.ts
-import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser,CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,19 +14,25 @@ export class AppComponent implements OnInit {
   title = 'dpe';
   showCookieConsent: boolean = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit(): void {
     this.checkCookieConsent();
   }
-
   checkCookieConsent(): void {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      this.showCookieConsent = true;
+    if (isPlatformBrowser(this.platformId)) {
+      const consent = localStorage.getItem('cookieConsent');
+      if (!consent) {
+        this.showCookieConsent = true;
+      }
     }
   }
 
   acceptCookies(): void {
-    localStorage.setItem('cookieConsent', 'true');
-    this.showCookieConsent = false;
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('cookieConsent', 'true');
+      this.showCookieConsent = false;
+    }
   }
 }
+
