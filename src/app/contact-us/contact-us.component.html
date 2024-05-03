@@ -8,6 +8,9 @@
 
       </div>
     <div class="align">
+        <button *ngIf="data?.showCloseButton" mat-icon-button (click)="closeDialog()" aria-label="Close dialog" class="close-button">
+            <span class="material-icons">close</span>
+        </button>
 
         <p class="head">- Quick Connect</p>
         <h2 class="page-sub-head">Get in touch with us for
